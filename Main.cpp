@@ -22,6 +22,8 @@ int menu();
 
 void agregar(vector<Persona*>);
 
+void eliminar(vector<Persona*>);
+
 int main(){
     int opcion;
     vector<Persona*> persona;
@@ -40,7 +42,12 @@ int main(){
         }
         if(opcion == 2){
             cout<<"-----------------------------------"<<endl;
-
+            eliminar(persona);
+            cout<<"-----------------------------------"<<endl;
+        }
+        if(opcion == 3){
+            cout<<"-----------------------------------"<<endl;
+            
             cout<<"-----------------------------------"<<endl;
         }
     }while(opcion != 4);
@@ -196,8 +203,17 @@ void agregar(vector<Persona*> persona){
             cin>>tipo;
             persona[cont]->getPoder().push_back(new Invocacion(nombre,especie,habilidad,tipo,nombre,nivel));
         }
-    cout<<"-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-"<<endl;
     }
-    cout<<"Se ha agregado exitosamente"<<endl;
+    cout<<endl<<"Se ha agregado exitosamente"<<endl;
     cont++;
+}
+
+void eliminar(vector<Persona*> persona){
+    cout<<"Ingrese la posición que desea eliminar: ";
+    int posicion, tam;
+    cin>>posicion;
+    tam = persona.size();
+    int eliminar = tam-posicion;
+    persona.erase(persona.begin()+eliminar);
+    cout<<"El elemento ha sido eliminado"<<endl;
 }
