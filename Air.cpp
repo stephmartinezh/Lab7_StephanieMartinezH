@@ -4,7 +4,7 @@ Air::Air(){
 
 }
 
-Air::Air(int Pelo, string Color, string Origen, string Nombre, int Edad, edad Sexo):Persona(Origen, Nombre, Edad, Sexo){
+Air::Air(int Pelo, string Color, string Origen, string Nombre, int Edad, char Sexo):Persona(Origen, Nombre, Edad, Sexo){
     pelo = Pelo;
     color = Color;
 }

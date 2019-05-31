@@ -4,7 +4,7 @@ Water::Water(){
 
 }
 
-Water::Water(string Tribu, string Arma,string Origen, string Nombre, int Edad, edad Sexo):Persona(Origen, Nombre, Edad, Sexo){
+Water::Water(string Tribu, string Arma,string Origen, string Nombre, int Edad, char Sexo):Persona(Origen, Nombre, Edad, Sexo){
     tribu = Tribu;
     arma = Arma;
 }

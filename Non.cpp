@@ -4,7 +4,7 @@ Non::Non(){
 
 }
 
-Non::Non(string t, int f, int v,string Origen, string Nombre, int Edad, edad Sexo):Persona(Origen, Nombre, Edad, Sexo){
+Non::Non(string t, int f, int v,string Origen, string Nombre, int Edad, char Sexo):Persona(Origen, Nombre, Edad, Sexo){
     trabajo = t;
     fuerza = f;
     velocidad = v;

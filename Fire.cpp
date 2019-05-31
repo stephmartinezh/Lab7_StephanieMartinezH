@@ -4,7 +4,7 @@ Fire::Fire(){
 
 }
 
-Fire::Fire(int Cicatriz, int Victorias, string Origen, string Nombre, int Edad, edad Sexo):Persona(Origen, Nombre, Edad, Sexo){
+Fire::Fire(int Cicatriz, int Victorias, string Origen, string Nombre, int Edad, char Sexo):Persona(Origen, Nombre, Edad, Sexo){
     cicatriz = Cicatriz;
     victorias = Victorias;
 }

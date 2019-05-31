@@ -4,7 +4,7 @@ Invocacion::Invocacion(){
 
 }
         
-Invocacion::Invocacion(string n, string e, string h, string t, string n, int p):Poder(n, p){
+Invocacion::Invocacion(string n, string e, string h, string t, string n1, int p):Poder(n1, p){
     nombre = n;
     especie = e;
     habilidad = h;

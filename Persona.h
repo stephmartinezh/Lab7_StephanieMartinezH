@@ -30,7 +30,7 @@ class Persona{
         char getSexo();
         void setSexo(char);
 
-        void setPoder(vector<Poder*>);
+        vector<Poder*> getPoder();
 
         virtual string toString() = 0;
 };

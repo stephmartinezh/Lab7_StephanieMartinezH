@@ -4,7 +4,7 @@ Earth::Earth(){
 
 }
 
-Earth::Earth(int Coles, string Grad,string Origen, string Nombre, int Edad, edad Sexo):Persona(Origen, Nombre, Edad, Sexo){
+Earth::Earth(int Coles, string Grad,string Origen, string Nombre, int Edad, char Sexo):Persona(Origen, Nombre, Edad, Sexo){
     coles = Coles;
     graduacion = Grad;
 }

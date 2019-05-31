@@ -43,8 +43,8 @@ void Persona::setSexo(char Sexo){
     sexo = Sexo;
 }
 
-void setPoder(vector<Poder*> poder){
-    poder.push_back(new Poder());
+vector<Poder*> Persona::getPoder(){
+    return poder;
 }
 /*string Persona::toString(){
     return "Nombre: "<<getNombre()<<" Nación de origen: "<<getOrigen()<<" Edad: "<<getEdad()<<" Sexo: "<<getSexo();

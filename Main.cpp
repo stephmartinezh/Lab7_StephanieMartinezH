@@ -20,7 +20,7 @@ using std::string;
 
 int menu();
 
-vector<Persona*> agregar(vector<Persona*>);
+void agregar(vector<Persona*>);
 
 int main(){
     int opcion;
@@ -29,20 +29,26 @@ int main(){
         opcion = menu();
         while(opcion <1 || opcion > 4){
             cout<<"El número que ha ingresado no es válido"<<endl;
+            opcion = 0;
             opcion = menu();
         }
         if(opcion == 1){
             cout<<"-----------------------------------"<<endl;
-
+            agregar(persona);
             cout<<"-----------------------------------"<<endl;
 
         }
+        if(opcion == 2){
+            cout<<"-----------------------------------"<<endl;
+
+            cout<<"-----------------------------------"<<endl;
+        }
     }while(opcion != 4);
-    for (int i = 0; i < poder.size(); i++)
+    for (int i = 0; i < persona.size(); i++)
     {
-        delete poder[i];
+        delete persona[i];
     }
-    poder.clear();
+    persona.clear();
     return 0;
 }
 
@@ -58,9 +64,9 @@ int menu(){
     return opcion;
 }
 
-vector<Persona*> agregar(vector<Persona*> persona){
+void agregar(vector<Persona*> persona){
     string origen, nombre;
-    int edad, cont = 0;
+    int edad, cont = 0, cond = 0;
     char sexo;
     cout<<"Ingrese la nación de origen: ";
     cin>>origen;
@@ -80,6 +86,8 @@ vector<Persona*> agregar(vector<Persona*> persona){
     cout<<"     Ingrese una opción: ";
     int opcion;
     cin>>opcion;
+    cout<<endl;
+    cout<<"-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-"<<endl;
     if(opcion == 1){
         int pelo;
         string color;
@@ -131,24 +139,24 @@ vector<Persona*> agregar(vector<Persona*> persona){
         cin>>fuerza;
         cout<<"Ingrese la velocidad: ";
         cin>>velocidad;
+        cond = 1;
         persona.push_back(new Non(trabajo, fuerza, velocidad, origen, nombre, edad, sexo));
     }
+    cout<<"-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-"<<endl;
 
-
-    cout<<"Ingrese 1 si la persona es un bender o un 2 si es un non bender: ";
-    int op;
-    cin>>op;
-    if(op == 1){
+    if(cond == 0){
         cout<<"Ingrese el nombre del poder especial: ";
         string nombrePoder;
         cin>>nombrePoder;
         cout<<"Ingrese el nivel del poder especial: ";
         int nivel;
         cin>>nivel;
+        cout<<endl;
         cout<<"1.- Poder ofensivo"<<endl<<"2.- Poder defensivo"<<endl<<"3.- Poder curativo"<<endl<<"4.- Poder de invocación"<<endl;
         cout<<"     Ingrese una opción: ";
         int opcion2;
         cin>>opcion2;
+        cout<<"-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-"<<endl;
         if(opcion2 == 1){
             cout<<"Ingrese el rango: ";
             int rango;
@@ -156,7 +164,7 @@ vector<Persona*> agregar(vector<Persona*> persona){
             cout<<"Ingrese la fuerza: ";
             int fuerza;
             cin>>fuerza;
-            persona[cont]->setPoder(new Ofensivo(rango,fuerza,nombre,nivel));
+            persona[cont]->getPoder().push_back(new Ofensivo(rango,fuerza,nombre,nivel));
         }
         if(opcion2 == 2){
             cout<<"Ingrese la resistencia: ";
@@ -165,15 +173,15 @@ vector<Persona*> agregar(vector<Persona*> persona){
             cout<<"Ingrese la duración: ";
             int duracion;
             cin>>duracion;
-            persona[cont]->setPoder(new Defensa(resistencia,duracion,nombre,nivel));
+            persona[cont]->getPoder().push_back(new Defensa(resistencia,duracion,nombre,nivel));
         }
-        if(opcion == 3){
+        if(opcion2 == 3){
             cout<<"Ingrese el tipo de curación: ";
             string tipo;
             cin>>tipo;
-            persona[cont]->setPoder(new Curativo(tipo,nombre,nivel));
+            persona[cont]->getPoder().push_back(new Curativo(tipo,nombre,nivel));
         }
-        if(opcion == 4){
+        if(opcion2 == 4){
             cout<<"Ingrese el nombre: ";
             string nombre;
             cin>>nombre;
@@ -186,10 +194,10 @@ vector<Persona*> agregar(vector<Persona*> persona){
             cout<<"Ingrese el tipo: ";
             string tipo;
             cin>>tipo;
-            persona[cont]->setPoder(new Invocacion(nombre,especie,habilidad,tipo,nombre,nivel));
+            persona[cont]->getPoder().push_back(new Invocacion(nombre,especie,habilidad,tipo,nombre,nivel));
         }
+    cout<<"-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-"<<endl;
     }
     cout<<"Se ha agregado exitosamente"<<endl;
     cont++;
-    return persona;
 }
