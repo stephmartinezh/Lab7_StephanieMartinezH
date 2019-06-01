@@ -230,17 +230,36 @@ void eliminar(vector<Persona*> persona){
 void listar(vector<Persona*> persona){
     for (int i = 0; i <= persona.size()-1; i++)
     {
-        if(dynamic_cast<Water*>(persona[i])){
-            cout<<persona[i]->toString()<<endl;            
-        }else if(dynamic_cast<Fire*>(persona[i])){
-            cout<<persona[i]->toString()<<endl;            
-        }else if(dynamic_cast<Earth*>(persona[i])){
-            cout<<persona[i]->toString()<<endl;            
-        }else if(dynamic_cast<Air*>(persona[i])){
-            cout<<persona[i]->toString()<<endl;            
-        }else if(dynamic_cast<Non*>(persona[i])){
-            cout<<persona[i]->toString()<<endl;                        
+        for (int j = 0; j <= persona.size()-1; j++)
+        {
+            if(dynamic_cast<Water*>(persona[j])){
+                cout<<persona[j]->toString()<<endl;  
+            }
         }
+        for (int j = 0;  j <= persona.size()-1; j++)
+        {
+            if(dynamic_cast<Fire*>(persona[j])){
+                cout<<persona[j]->toString()<<endl; 
+            }  
+        }
+        for (int j = 0; j <= persona.size()-1; j++)
+        {
+            if(dynamic_cast<Earth*>(persona[j])){
+                cout<<persona[j]->toString()<<endl; 
+            }  
+        }
+        for (int j = 0; j <= persona.size()-1; j++)
+        {
+            if(dynamic_cast<Air*>(persona[j])){
+                cout<<persona[j]->toString()<<endl; 
+            }  
+        } 
+        for (int j = 0; j <= persona.size()-1; j++)
+        {
+            if(dynamic_cast<Non*>(persona[j])){
+                cout<<persona[j]->toString()<<endl; 
+            }  
+        }                   
     }
     
 }
