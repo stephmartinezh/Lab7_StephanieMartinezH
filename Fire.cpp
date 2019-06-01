@@ -27,10 +27,18 @@ void Fire::setVictorias(int v){
 
 string Fire::toString(){
     string cadena = "";
-    cadena += "Maestro con ";
+    cadena += "Maestro del fuego con ";
     cadena += cicatriz;
-    cadena += " cicatrices y con ";
+    cadena += " cicatrices, con ";
     cadena += victorias;
     cadena += " victoras";
+    cadena += ". Su nombre es ";
+    cadena += getNombre();
+    cadena += ", viene de ";
+    cadena += getOrigen();
+    cadena += ", tiene ";
+    cadena += getEdad();
+    cadena += " años y es ";
+    cadena += getSexo();
     return cadena;
 }

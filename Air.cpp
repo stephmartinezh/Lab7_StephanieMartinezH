@@ -27,9 +27,17 @@ void Air::setColor(string Color){
 
 string Air::toString(){
     string cadena = "";
-    cadena += "Persona con";
+    cadena += "Maestro del aire con ";
     cadena += pelo;
-    cadena += " y el color de las flechas es: ";
+    cadena += " pelos y el color de las flechas ";
     cadena += color;
+    cadena += ". Su nombre es ";
+    cadena += getNombre();
+    cadena += ", viene de ";
+    cadena += getOrigen();
+    cadena += ", tiene ";
+    cadena += getEdad();
+    cadena += " años y es ";
+    cadena += getSexo();
     return cadena;
 }

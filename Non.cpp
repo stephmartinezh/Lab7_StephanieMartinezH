@@ -36,11 +36,19 @@ void Non::setVelocidad(int v){
 
 string Non::toString(){
     string cadena = "";
-    cadena += "Trabajo: ";
+    cadena += "Persona normal que trabaja de  ";
     cadena += trabajo;
-    cadena += " Fuerza: ";
+    cadena += " , su fuerza es de ";
     cadena += fuerza;
-    cadena += " Velocidad: ";
+    cadena += ", su velocidad es de ";
     cadena += velocidad;
+    cadena += ". Su nombre es ";
+    cadena += getNombre();
+    cadena += ", viene de ";
+    cadena += getOrigen();
+    cadena += ", tiene ";
+    cadena += getEdad();
+    cadena += " años y es ";
+    cadena += getSexo();
     return cadena;
 }

@@ -27,9 +27,17 @@ void Water::setArma(string a){
 
 string Water::toString(){
     string cadena = "";
-    cadena += "Persona de la tribu: ";
+    cadena += "Maestro del agua que viene de la tribu del ";
     cadena += tribu;
-    cadena += " con arma: ";
+    cadena += ", su arma es ";
     cadena += arma;
+    cadena += ". Su nombre es ";
+    cadena += getNombre();
+    cadena += ", viene de ";
+    cadena += getOrigen();
+    cadena += ", tiene ";
+    cadena += getEdad();
+    cadena += " años y es ";
+    cadena += getSexo();
     return cadena;
 }

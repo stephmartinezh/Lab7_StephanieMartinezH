@@ -18,11 +18,15 @@ using std::endl;
 #include<string>
 using std::string;
 
+#include <typeinfo>
+
 int menu();
 
-void agregar(vector<Persona*>);
+vector<Persona*> agregar(vector<Persona*>);
 
 void eliminar(vector<Persona*>);
+
+void listar(vector<Persona*>);
 
 int main(){
     int opcion;
@@ -36,7 +40,7 @@ int main(){
         }
         if(opcion == 1){
             cout<<"-----------------------------------"<<endl;
-            agregar(persona);
+            persona = agregar(persona);
             cout<<"-----------------------------------"<<endl;
 
         }
@@ -47,7 +51,7 @@ int main(){
         }
         if(opcion == 3){
             cout<<"-----------------------------------"<<endl;
-            
+            listar(persona);
             cout<<"-----------------------------------"<<endl;
         }
     }while(opcion != 4);
@@ -71,7 +75,7 @@ int menu(){
     return opcion;
 }
 
-void agregar(vector<Persona*> persona){
+vector<Persona*> agregar(vector<Persona*> persona){
     string origen, nombre;
     int edad, cont = 0, cond = 0;
     char sexo;
@@ -206,6 +210,7 @@ void agregar(vector<Persona*> persona){
     }
     cout<<endl<<"Se ha agregado exitosamente"<<endl;
     cont++;
+    return persona;
 }
 
 void eliminar(vector<Persona*> persona){
@@ -214,6 +219,28 @@ void eliminar(vector<Persona*> persona){
     cin>>posicion;
     tam = persona.size();
     int eliminar = tam-posicion;
-    persona.erase(persona.begin()+eliminar);
+    if(posicion == 0){
+        persona.pop_back();
+    }else{
+        persona.erase(persona.begin()+eliminar);
+    }
     cout<<"El elemento ha sido eliminado"<<endl;
+}
+
+void listar(vector<Persona*> persona){
+    for (int i = 0; i <= persona.size()-1; i++)
+    {
+        if(dynamic_cast<Water*>(persona[i])){
+            cout<<persona[i]->toString()<<endl;            
+        }else if(dynamic_cast<Fire*>(persona[i])){
+            cout<<persona[i]->toString()<<endl;            
+        }else if(dynamic_cast<Earth*>(persona[i])){
+            cout<<persona[i]->toString()<<endl;            
+        }else if(dynamic_cast<Air*>(persona[i])){
+            cout<<persona[i]->toString()<<endl;            
+        }else if(dynamic_cast<Non*>(persona[i])){
+            cout<<persona[i]->toString()<<endl;                        
+        }
+    }
+    
 }

@@ -27,9 +27,17 @@ void Earth::setGraduacion(string g){
 
 string Earth::toString(){
     string cadena = "";
-    cadena += "Coles: ";
+    cadena += "Maestro de la tierra con ";
     cadena += coles;
-    cadena += " Graduación de ojos: ";
+    cadena += " coles, su graduación de ojos es ";
     cadena += graduacion;
+    cadena += ". Su nombre es ";
+    cadena += getNombre();
+    cadena += ", viene de ";
+    cadena += getOrigen();
+    cadena += ", tiene ";
+    cadena += getEdad();
+    cadena += " años y es ";
+    cadena += getSexo();
     return cadena;
 }
